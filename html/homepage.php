@@ -15,7 +15,7 @@
 				<div class="top-filler"></div>
 				<div class="navlogo-section">
 					<div class="logoside">
-						<img src="../img/Quizard_LOGO.png" alt="logo">
+						<img src="../img/logo.png" alt="logo">
 						<p class="logo">QUIZARD</p>
 
 					</div>
@@ -30,7 +30,6 @@
 						<div class="user-nav">
 							<!-- name -->
 							<!-- <p>Username</p> -->
-							<!-- <img src=""> -->
 
 							<!-- login button -->
 							<a class="login" href="">Log in</a>
@@ -125,9 +124,8 @@
 				<p class="cright">Copyright ® 2024 Quizard All rights Reserved</p>
 				
 			</div>
-
-		</div>
 		
+		</div>
 	</div>
 
 </body>

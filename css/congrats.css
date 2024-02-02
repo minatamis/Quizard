@@ -1,0 +1,65 @@
+@import url('style.css');
+.section-one {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('../img/jj.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+.header {
+    color: #F6F6F6;
+    text-align: center;
+    font-family: 'Irish Grover';
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 100px;
+}
+
+.subheader {
+    color: #F6F6F6;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 85px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 20px;
+}
+
+.another-subheader {
+    color: #F6F6F6;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 85px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 20px;
+}
+
+.square {
+    width: 329px;
+    height: 111px;
+    background-color: #C8F560;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.square-text {
+    color: #000; /* Updated color */
+    font-family: 'Poppins';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

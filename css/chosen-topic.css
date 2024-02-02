@@ -1,0 +1,141 @@
+@import url('style.css');
+.section-one {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('../img/jj.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+.bod{
+	height: 50vh;
+}
+.rectangle-container {
+    width: 100%;
+    height: 75px;
+    background-color: #4E515C;
+    flex-shrink: 0;
+}
+
+.content {
+    z-index: 1;
+    padding: 20px;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 18px;
+    float: left;
+}
+
+.quizard-text {
+    color: #FFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Inter', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.right-rectangle {
+    width: 100%;
+    height: 75px;
+    background-color: #7862F8;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.right-rectangle-text {
+    color: #FFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 200px;
+}
+
+.middle-rectangle {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 735px; /* Adjust the width as needed */
+    height: 199px; /* Adjust the height as needed */
+    background-color: #C8F560; /* Updated background color */
+    border-radius: 100px; /* Added border-radius */
+    z-index: 0; /* Make sure it's behind the content */
+    padding: 20px;
+    text-align: center;
+}
+
+.middle-rectangle-heading {
+    color: #000; /* Updated text color */
+    font-family: 'Irish Grover'; /* Updated font-family */
+    font-size: 80px; /* Updated font-size */
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 8px;
+}
+
+.middle-rectangle-subheading {
+    color: #000; /* Updated text color */
+    font-family: 'Poppins'; /* Updated font-family */
+    font-size: 40px; /* Updated font-size */
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.middle-rectangle-h1 {
+    color: #FFF; /* Updated text color */
+    font-family: 'Irish Grover'; /* Updated font-family */
+    font-size: 60px; /* Adjust the font-size as needed */
+    font-style: normal;
+    font-weight: 600; /* Adjust the font-weight as needed */
+    line-height: normal;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.bottom-rectangle {
+    position: absolute;
+    top: 65%; /* Adjusted top position */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 208px; /* Adjust the width as needed */
+    height: 86px; /* Adjust the height as needed */
+    background-color: #7862F8; /* Updated background color */
+    border-radius: 100px; /* Updated border-radius */
+    z-index: 0; /* Make sure it's behind the content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-rectangle-header {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

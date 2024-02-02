@@ -1,0 +1,117 @@
+@import url('style.css');
+.section-one {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('../img/hang.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+.py-head{
+    display: flex;
+/*    border: 1px solid white;*/
+    margin-top: 50px;
+}
+.text {
+    font-family: 'Irish Grover', sans-serif; 
+    color: #F6F6F6; 
+    font-size: 40px;
+/*    position: fixed;*/
+    top: 80px;
+    left: 50px;
+    margin: auto;
+}
+
+.exit-button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    padding: 5px;
+    width: 100px;
+    height: 40px;
+    background-color: #7862F8; 
+    color: #FFFFFF; 
+    border: none;
+    cursor: pointer;
+    border-radius: 100px;
+  }
+
+  .exit-button:hover {
+    background-color: rgba(217, 217, 217, 0.537);
+    color: #FFFFFF;
+}
+
+
+.cube-container {
+    justify-content: center;
+    align-items: center;
+/*    border: 1px solid white;*/
+    padding: 20px 100px;
+    display: flex;
+}
+.images{
+    width: 750px;
+    height: 750px;
+/*    border: 1px solid white;*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-container {
+    width: 370px;
+    height: 370px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+
+.image-container img {
+    width: 370px;
+    height: 370px;
+    object-fit: cover;
+}
+.rit{
+    height: 100%;
+    width: 50%;
+/*    border: 1px solid white;*/
+    margin: auto;
+}
+
+.blanks{
+    width: auto;
+    height: 100px;
+    display: flex;
+/*    border: 1px solid white;*/
+}
+.broken-line {
+    position: relative;
+    width: 80px;
+    height: 100px;
+    border-bottom: 5px solid white;
+    margin: auto;
+    color: white;
+    font-size: 50px;
+
+}
+.alphabet{
+    height: 600px;
+    width: 700px;
+    margin: auto;
+    margin-top: 50px;
+/*    border: 1px solid white;*/
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.letter{
+    background-color: #C8F560;
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: auto;
+    font-size: 50px;
+}

@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+@import url('style.css');
+html, body{
+  margin: 0;
+}
+body{
+      align-items: center;
+}
+
+.title {
+  color:white;
+  font-family: Poppins;
+  font-weight: normal;
+  display: flex;
+  margin-top: -120px;
+  font-size: xxx-large;
+  margin-left: 430px;
+  position: absolute;
+  }
+  .title p{
+    margin-left: 35px;
+  }
+
+  .title info {
+  color:white;
+  font-family: Poppins;
+  font-weight: bolder;
+  display: flex;
+  margin: auto;
+  margin-top:220px;
+  font-size: xx-large;
+  margin-left: -240px;
+  position: inherit;
+  text-align: left;
+  }
+
+  .backbutton {
+  position: absolute;
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+  background-image: url(../img/backbutton.png);
+  cursor: pointer;
+  top: 310px;
+  left: 300px;
+}
+
+.h2 {
+  width: 31%;
+  height: 10px;
+  border: none;
+  background-color:#C8F560;
+  display: flex;
+  background-attachment: inherit;
+  margin-top: 12rem;
+  margin-left: 29rem;
+}
+
+ .title1 p {
+  color:white;
+  font-family: Poppins;
+  font-weight: bolder;
+  display: flex;
+  margin: auto;
+  margin-top: 280px;
+  font-size: xx-large;
+  margin-left: 200px;
+  position: absolute;
+ }
+
+ .title info2 {
+  color:white;
+  font-family: Poppins;
+  font-weight: normal;
+  display: flex;
+  margin: auto;
+  margin-top: 290px;
+  font-size: xx-large;
+  margin-left: -240px;
+  position: inherit;
+ }
+
+ .title1 p {
+  color:white;
+  font-family: Poppins;
+  font-weight: bolder;
+  display: flex;
+  margin: auto;
+  margin-top: 240px;
+  font-size:x-large;
+  margin-left: 190px;
+  position: absolute;
+ }
+
+ .title1 info{
+  color:white;
+  font-family: Poppins;
+  font-weight: normal;
+  margin-top: 290px;
+  font-size:large;
+  margin-left: 210px;
+  position: absolute;
+ }
+
+
+.title2 p {
+  color:white;
+  font-family: Poppins;
+  font-weight: bolder;
+  display: flex;
+  margin: auto;
+  margin-top: 400px;
+  font-size:x-large;
+  margin-left: 210px;
+  position: absolute;
+ }
+
+ .title2 info{
+  color:white;
+  font-family: Poppins;
+  font-weight: normal;
+  margin-top: 450px;
+  font-size:large;
+  margin-left: 210px;
+  position: absolute;
+ }
+
+.title3 p {
+  color:white;
+  font-family: Poppins;
+  font-weight: bolder;
+  display: flex;
+  margin: auto;
+  margin-top: 530px;
+  font-size:x-large;
+  margin-left: 210px;
+  position: absolute;
+ }
+
+ .title3 info{
+  color:white;
+  font-family: Poppins;
+  font-weight: normal;
+  margin-top: 580px;
+  font-size:large;
+  margin-left: 210px;
+  position: absolute;
+ }
+
+ .frequent info {
+  color:white;
+  font-family: Poppins;
+  font-weight: bolder;
+  display: flex;
+  margin: auto;
+  margin-top: 700px;
+  font-size: xx-large;
+  margin-left: 190px;
+  position: inherit;
+ }
+
+
+
+ .questions p {
+  color:white;
+  font-family: Poppins;
+  font-weight: bolder;
+  display: flex;
+  margin: auto;
+  margin-top: 60px;
+  font-size:x-large;
+  margin-left: 210px;
+  position: absolute;
+ }
+
+ .questions info{
+  color:white;
+  font-family: Poppins;
+  font-weight: normal;
+  margin-top: 100px;
+  font-size:large;
+  margin-left: 240px;
+  position: absolute;
+ }
+
+ .questions1 p {
+  color:white;
+  font-family: Poppins;
+  font-weight: bolder;
+  display: flex;
+  margin: auto;
+  margin-top: 170px;
+  font-size:x-large;
+  margin-left: 210px;
+  position: absolute;
+ }
+
+ .questions1 info{
+  color:white;
+  font-family: Poppins;
+  font-weight: normal;
+  margin-top: 210px;
+  font-size:large;
+  margin-left: 240px;
+  position: absolute;
+ }
+
+ .questions2 p {
+  color:white;
+  font-family: Poppins;
+  font-weight: bolder;
+  display: flex;
+  margin: auto;
+  margin-top: 260px;
+  font-size:x-large;
+  margin-left: 210px;
+  position: absolute;
+ }
+
+ .questions2 info{
+  color:white;
+  font-family: Poppins;
+  font-weight: normal;
+  margin-top: 300px;
+  font-size:large;
+  margin-left: 240px;
+  position: absolute;
+ }
