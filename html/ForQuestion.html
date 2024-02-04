@@ -1,0 +1,88 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+</head>
+<body>
+
+    <h1>Quiz App</h1>
+
+    <div id="quiz-container">
+        <label id="question-label">Loading...</label>
+        <button class="answer-btn" value="" id="btn1">Option 1</button>
+        <button class="answer-btn" value="" id="btn2">Option 2</button>
+    </div>
+
+    <p id="score">Score: 0</p>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var buttons = document.getElementsByClassName('answer-btn');
+            var scoreDisplay = $('#score');
+            var questionLabel = $('#question-label');
+            var score = 0;
+			var correctAnswer;
+			let answer = new Array();
+            function updateQuestionAndAnswers(data) {
+				if (data.length > cnt) {
+					$("#question-label").text(data[cnt].question);
+					answer[0] = data[cnt].answer1;
+					answer[1] = data[cnt].answer2;
+					shuffleArray(answer);
+					$("#btn1").text(answer[0]);
+					$("#btn2").text(answer[1]);
+					correctAnswer = data[cnt].answer
+				} else {
+					console.error('No more questions available.');
+				}
+			}
+			
+			function shuffleArray(array) {
+				for (let i = array.length - 1; i > 0; i--) {
+					const j = Math.floor(Math.random() * (i + 1));
+					[array[i], array[j]] = [array[j], array[i]]; // Swap elements
+				}
+			}
+			
+			function CompareIfCorrect(answer){
+				if (answer == correctAnswer){
+					alert(true);
+				}else{
+					alert(false);
+				}
+			}
+			
+			var cnt = 0;
+			$.ajax({
+                    url: 'example.php',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+					
+						updateQuestionAndAnswers(data);
+						
+						$('#btn1').click(function () {
+							CompareIfCorrect($("#btn1").text());
+							cnt++;
+							updateQuestionAndAnswers(data); 
+						});
+						
+						$('#btn2').click(function () {
+							CompareIfCorrect($("#btn2").text());
+							cnt++;
+							updateQuestionAndAnswers(data); 
+						});
+                    },
+                    error: function (data) {
+                        console.error('Error fetching new questions and answers. ');
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
