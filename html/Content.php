@@ -1,11 +1,20 @@
+<?php
+session_start();
+ 
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: sign-in.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chosen topic</title>
-    <link rel="stylesheet" type="text/css" href="../css/chosen-topic.css">
+    <title>Content</title>
+    <link rel="stylesheet" type="text/css" href="../css/content.css">
     <link rel="icon" type="image/x-icon" href="../img/quizardfavicon.png">
+
 </head>
 <body>
     <div class="home">
@@ -15,16 +24,19 @@
                 <div class="top-filler"></div>
                 <div class="navlogo-section">
                     <div class="logoside">
-                        <img src="../img/logo.png" alt="logo">
-                        <p class="logo">QUIZARD</p>
+                        <a href="homepage.php">
+							<img src="../img/logo.png" alt="logo">
+							<p class="logo" style="color: white;">QUIZARD</p>
+						</a>
+						
 
-                    </div>
-                    <div class="right-nav">
-                        <div class="navbar">
-                            <!-- put class active when in this tab -->
-                            <a href="">Home</a>
-                            <a href="">Quizzez</a>
-                            <a href="">Scoreboard</a>
+					</div>
+					<div class="right-nav">
+						<div class="navbar">
+							<!-- put class active when in this tab -->
+							<a href="homepage.php">Home</a>
+							<a class="active" href="content.php">Quizzez</a>
+							<a href="scoreboard.php">Scoreboard</a>
 
                         </div>
                         <div class="user-nav">
@@ -42,25 +54,27 @@
                 
             </div>
             <!-- end of header -->
-            <!-- insert body here -->
-            <div class="bod">
-                <h1 class="middle-rectangle-h1">Your Chosen Topic is:</h1>
-
-                <div class="middle-rectangle">
-                    <div class="middle-rectangle-heading">
-                        Python
+            <div class="images-container">
+                <div class="row-container">
+                    <div class="image-container">
+                        <img class="image" src="../img/Java.png" alt="Java Image">
                     </div>
-                    <div class="middle-rectangle-subheading">
-                        Game: Bookworm
-                    </div>
+                    <div class="language-text">Java Script</div>
                 </div>
-
-                <div class="bottom-rectangle">
-                    <div class="bottom-rectangle-header">
-                        Play
+                <div class="row-container">
+                    <div class="image-container">
+                        <img class="image" src="../img/Html.png" alt="HTML Image">
                     </div>
+                    <div class="language-text">HTML</div>
+                </div>
+                <div class="row-container">
+                    <div class="image-container">
+                        <img class="image" src="../img/Python.png" alt="Python Image">
+                    </div>
+                    <div class="language-text">Python</div>
                 </div>
             </div>
+
 
             <!-- footer -->
             <div class="footer-container">
@@ -121,9 +135,8 @@
                 
             </div>
         
-        </div>
     </div>
+    
+
 </body>
 </html>
-
-

@@ -1,12 +1,19 @@
+<?php
+session_start();
+ 
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: sign-in.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizard</title>
-    <link rel="stylesheet" type="text/css" href="../css/bookworm.css">
+    <title>Chosen topic</title>
+    <link rel="stylesheet" type="text/css" href="../css/chosen-topic.css">
     <link rel="icon" type="image/x-icon" href="../img/quizardfavicon.png">
-
 </head>
 <body>
     <div class="home">
@@ -16,16 +23,19 @@
                 <div class="top-filler"></div>
                 <div class="navlogo-section">
                     <div class="logoside">
-                        <img src="../img/logo.png" alt="logo">
-                        <p class="logo">QUIZARD</p>
+                        <a href="homepage.php">
+							<img src="../img/logo.png" alt="logo">
+							<p class="logo" style="color: white;">QUIZARD</p>
+						</a>
+						
 
-                    </div>
-                    <div class="right-nav">
-                        <div class="navbar">
-                            <!-- put class active when in this tab -->
-                            <a href="">Home</a>
-                            <a href="">Quizzez</a>
-                            <a href="">Scoreboard</a>
+					</div>
+					<div class="right-nav">
+						<div class="navbar">
+							<!-- put class active when in this tab -->
+							<a href="homepage.php">Home</a>
+							<a class="active" href="content.php">Quizzez</a>
+							<a href="scoreboard.php">Scoreboard</a>
 
                         </div>
                         <div class="user-nav">
@@ -45,42 +55,22 @@
             <!-- end of header -->
             <!-- insert body here -->
             <div class="bod">
-                <div class="py-head">
-                    <div class="text">
-                        Python: Bookworm
+                <h1 class="middle-rectangle-h1">Your Chosen Topic is:</h1>
+
+                <div class="middle-rectangle">
+                    <div class="middle-rectangle-heading">
+                        Java Script
                     </div>
-                    <button class="exit-button">EXIT</button>
+                    <div class="middle-rectangle-subheading">
+                        Game: Hangman
+                    </div>
                 </div>
 
-                <div class="image-container">
-                    <div class="character">
-                        <div class="lives">
-                            <div class="life"></div>
-                            <div class="life"></div>
-                            <div class="life"></div>
-                        </div>
-                        <div class="worm"></div>
+                <div class="bottom-rectangle">
+                    <div class="bottom-rectangle-header">
+                        Play
                     </div>
-                    <div class="character">
-                        <div class="lives-right">
-                            <div class="life-right"></div>
-                            <div class="life-right"></div>
-                            <div class="life-right"></div>
-                        </div>
-                        <div class="wizard"></div>
-                    </div>
-                    
                 </div>
-
-                <div class="questions">
-                    <p>Name the Python Library modules which need to be imported to invoke the; load ()</p>
-                </div>
-
-                <div class="button-container">
-                    <button class="choice-button" onclick="handleChoice('option1')">A. Pickle</button>
-                    <button class="choice-button" onclick="handleChoice('option2')">B. Random</button>
-                </div>
-                
             </div>
 
             <!-- footer -->
@@ -144,5 +134,8 @@
         
         </div>
     </div>
+    
 </body>
 </html>
+
+

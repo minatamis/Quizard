@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scoreboard</title>
-    <link rel="stylesheet" type="text/css" href="../css/scoreboard.css">
-    <link rel="icon" type="image/x-icon" href="../img/quizardfavicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quizard - Help Center</title>
+  <link rel="stylesheet" type="text/css" href="../css/help-center-style.css">
+  <link rel="icon" type="image/x-icon" href="../img/quizardfavicon.png">
 </head>
+
 <body>
-    <div class="home">
+<div class="home">
         <div class="section-one">
             <!-- header -->
             <div class="header-container">
                 <div class="top-filler"></div>
                 <div class="navlogo-section">
                     <div class="logoside">
-                        <img src="../img/Quizard_LOGO.png" alt="logo">
-                        <p class="logo">QUIZARD</p>
+                        <a href="homepage.php">
+							<img src="../img/logo.png" alt="logo">
+							<p class="logo" style="color: white;">QUIZARD</p>
+						</a>
+						
 
-                    </div>
-                    <div class="right-nav">
-                        <div class="navbar">
-                            <!-- put class active when in this tab -->
-                            <a href="">Home</a>
-                            <a href="">Quizzez</a>
-                            <a class="active" href="">Scoreboard</a>
+					</div>
+					<div class="right-nav">
+						<div class="navbar">
+							<!-- put class active when in this tab -->
+							<a href="homepage.php">Home</a>
+							<a href="content.php">Quizzez</a>
+							<a href="scoreboard.php">Scoreboard</a>
 
                         </div>
                         <div class="user-nav">
                             <!-- name -->
                             <!-- <p>Username</p> -->
-                            <!-- <img src=""> -->
 
                             <!-- login button -->
                             <a class="login" href="">Log in</a>
@@ -43,36 +46,77 @@
                 
             </div>
             <!-- end of header -->
-            <!-- insert body here -->
-            <div class="header">Scoreboard</div>
+            <div class="help">
+                <a href="#"><div class="backbutton"> </div></a>
 
-            <div class="center-square">
-                <div class="row">
-                    <!-- Content for Row 1 -->
-                    <p>Jemuel  Java Script 8/10</p>
+                <div class="title">
+                    <p> Quizard Help Center </p>
+                    <info> Welcome to the Quizard Help Center</info>
+                    <info2> Getting Started </info2>
+
                 </div>
-                <div class="row">
-                    <!-- Content for Row 2 -->
-                    <p>John Henry HTML 9/10</p>
+                <div class="h2"></div>
+                <div class="title1">
+                   <p> 1. How to Create an Account: </p>
+                   <info><span class="bullet">&#8226;</span>  Navigate to the Quizard homepage and click on the "Sign Up" button.<br>
+                        <span class="bullet">&#8226;</span>  Fill in the required information to create your account.<br>
+                        <span class="bullet">&#8226;</span>  Verify your email address to activate your Quizard account.</info>
+
                 </div>
-                <div class="row">
-                    <!-- Content for Row 3 -->
-                    <p>Regina Python 10/10</p>
+
+
+                <div class="title2">
+                    <p> 2. Exploring Quizzes </p>
+                    <info><span class="bullet">&#8226;</span>  Once logged in, browse through our diverse quiz categories.
+                    <br><span class="bullet">&#8226;</span>  Click on a quiz to view details and begin the challenge.
                 </div>
-                <div class="row">
-                    <!-- Content for Row 4 -->
-                    <p>Yuki Java Script 9/10</p>
+
+                <div class="title3">
+                    <p> 3. Taking a Quiz </p>
+                    <info><span class="bullet">&#8226;</span>  Follow the on-screen instructions to answer questions.<br>
+                    <span class="bullet">&#8226;</span>  Submit your responses and see instant feedback.
                 </div>
-                <div class="row">
-                    <!-- Content for Row 5 -->
-                    <p>Jc HTML 9/10</p>
+
+
+                <div class="frequent"> 
+                    <info> FAQ (Frequently Asked Questions) </info> </div>
+
+                <div class="questions">
+               <p> 1. How is Quizard different from other quiz platforms? </p>
+               <info><span class="bullet">&#8226;</span> Quizard offers interactive quizzes across diverse topics, providing a dynamic learning experience.</info>
+                    
                 </div>
-                <div class="row">
-                    <!-- Content for Row 6 -->
-                    <p>JM Java Script 10/10</p>
+
+
+                <div class="questions1">
+                <p> 2. Can I create and share my quizzes? </p>
+                <info><span class="bullet">&#8226;</span> Currently, Quizard focuses on curated quizzes. User-created quizzes are a feature under development.</info>
                 </div>
+
+                <div class="questions2">
+                <p> 3. How are quizzes scored, and are there rewards? </p>
+                <info><span class="bullet">&#8226;</span> Quizzes are scored based on correct answers. While we don't offer physical rewards, you earn virtual badges for achievements.</info>
+                </div>
+
             </div>
-            <!-- etong br br br palitan nyo lang to ng content -->
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
 
 
             <!-- footer -->
@@ -133,10 +177,7 @@
                 <p class="cright">Copyright ® 2024 Quizard All rights Reserved</p>
                 
             </div>
-
-        </div>
         
-    </div>
-
+    </div>    
 </body>
 </html>

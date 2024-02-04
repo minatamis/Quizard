@@ -1,31 +1,41 @@
+<?php
+session_start();
+ 
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: sign-in.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quizard - Help Center</title>
-  <link rel="stylesheet" type="text/css" href="../css/help-center-style.css">
-  <link rel="icon" type="image/x-icon" href="../img/quizardfavicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congrats!!</title>
+    <link rel="stylesheet" type="text/css" href="../css/congrats.css">
+    <link rel="icon" type="image/x-icon" href="../img/quizardfavicon.png">
 </head>
-
 <body>
-<div class="home">
+    <div class="home">
         <div class="section-one">
             <!-- header -->
             <div class="header-container">
                 <div class="top-filler"></div>
                 <div class="navlogo-section">
                     <div class="logoside">
-                        <img src="../img/logo.png" alt="logo">
-                        <p class="logo">QUIZARD</p>
+                        <a href="homepage.php">
+							<img src="../img/logo.png" alt="logo">
+							<p class="logo" style="color: white;">QUIZARD</p>
+						</a>
+						
 
-                    </div>
-                    <div class="right-nav">
-                        <div class="navbar">
-                            <!-- put class active when in this tab -->
-                            <a href="">Home</a>
-                            <a href="">Quizzez</a>
-                            <a href="">Scoreboard</a>
+					</div>
+					<div class="right-nav">
+						<div class="navbar">
+							<!-- put class active when in this tab -->
+							<a href="homepage.php">Home</a>
+							<a href="content.php">Quizzez</a>
+							<a href="scoreboard.php">Scoreboard</a>
 
                         </div>
                         <div class="user-nav">
@@ -43,77 +53,23 @@
                 
             </div>
             <!-- end of header -->
-            <div class="help">
-                <a href="#"><div class="backbutton"> </div></a>
-
-                <div class="title">
-                    <p> Quizard Help Center </p>
-                    <info> Welcome to the Quizard Help Center</info>
-                    <info2> Getting Started </info2>
-
-                </div>
-                <div class="h2"></div>
-                <div class="title1">
-                   <p> 1. How to Create an Account: </p>
-                   <info><span class="bullet">&#8226;</span>  Navigate to the Quizard homepage and click on the "Sign Up" button.<br>
-                        <span class="bullet">&#8226;</span>  Fill in the required information to create your account.<br>
-                        <span class="bullet">&#8226;</span>  Verify your email address to activate your Quizard account.</info>
-
-                </div>
-
-
-                <div class="title2">
-                    <p> 2. Exploring Quizzes </p>
-                    <info><span class="bullet">&#8226;</span>  Once logged in, browse through our diverse quiz categories.
-                    <br><span class="bullet">&#8226;</span>  Click on a quiz to view details and begin the challenge.
-                </div>
-
-                <div class="title3">
-                    <p> 3. Taking a Quiz </p>
-                    <info><span class="bullet">&#8226;</span>  Follow the on-screen instructions to answer questions.<br>
-                    <span class="bullet">&#8226;</span>  Submit your responses and see instant feedback.
-                </div>
-
-
-                <div class="frequent"> 
-                    <info> FAQ (Frequently Asked Questions) </info> </div>
-
-                <div class="questions">
-               <p> 1. How is Quizard different from other quiz platforms? </p>
-               <info><span class="bullet">&#8226;</span> Quizard offers interactive quizzes across diverse topics, providing a dynamic learning experience.</info>
-                    
-                </div>
-
-
-                <div class="questions1">
-                <p> 2. Can I create and share my quizzes? </p>
-                <info><span class="bullet">&#8226;</span> Currently, Quizard focuses on curated quizzes. User-created quizzes are a feature under development.</info>
-                </div>
-
-                <div class="questions2">
-                <p> 3. How are quizzes scored, and are there rewards? </p>
-                <info><span class="bullet">&#8226;</span> Quizzes are scored based on correct answers. While we don't offer physical rewards, you earn virtual badges for achievements.</info>
-                </div>
-
+            <!-- insert body here -->
+            <div class="header">
+                CONGRATULATIONS!
             </div>
 
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            <div class="subheader">
+                Your Score is:
+            </div>
+
+            <div class="another-subheader">
+                10/10
+            </div>
+
+            <div class="square">
+                <span class="square-text">Back to Home</span>
+            </div>
+            <!-- etong br br br palitan nyo lang to ng content -->
 
 
             <!-- footer -->
@@ -175,6 +131,8 @@
                 
             </div>
         
-    </div>    
+        </div>
+    </div>
 </body>
 </html>
+

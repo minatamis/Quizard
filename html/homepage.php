@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,25 +19,36 @@
 				<div class="top-filler"></div>
 				<div class="navlogo-section">
 					<div class="logoside">
-						<img src="../img/logo.png" alt="logo">
-						<p class="logo">QUIZARD</p>
+						<a href="homepage.php">
+							<img src="../img/logo.png" alt="logo">
+							<p class="logo" style="color: white;">QUIZARD</p>
+						</a>
+						
 
 					</div>
 					<div class="right-nav">
 						<div class="navbar">
 							<!-- put class active when in this tab -->
-							<a href="">Home</a>
-							<a href="">Quizzez</a>
-							<a href="">Scoreboard</a>
+							<a class="active" href="homepage.php">Home</a>
+							<a href="content.php">Quizzez</a>
+							<a href="scoreboard.php">Scoreboard</a>
 
 						</div>
 						<div class="user-nav">
-							<!-- name -->
-							<!-- <p>Username</p> -->
-
-							<!-- login button -->
-							<a class="login" href="">Log in</a>
-							<a class="reg" href="">Register</a>							
+							<?php
+							if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+							{
+								echo "<a class='login' href=''>Log in</a>";
+								echo "<a class='reg' href=''>Register</a>";
+								
+							}
+							else
+							{
+								echo "<p class='username'>User: " . $_SESSION["username"] . "</p>";
+								echo "<a class='reg' href='logout.php'>Log out</a>";
+							}
+							
+							?>							
 						</div>
 						
 					</div>
@@ -71,7 +86,7 @@
 				<div class="inner-footer">
 					<div class="left-foot">
 						<div class="inside-left">
-							<img src="../img/quizardfavicon.png" alt="logo">
+							<a href="homepage.php"><img src="../img/quizardfavicon.png" alt="logo"></a>
 							
 							<p>“Unleash your Knowledge, embrace the Challenges.“</p>
 							<p class="from">@Quizard</p>

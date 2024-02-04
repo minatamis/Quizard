@@ -1,12 +1,19 @@
+<?php
+session_start();
+ 
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: sign-in.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content</title>
-    <link rel="stylesheet" type="text/css" href="../css/content.css">
+    <title>Game</title>
+    <link rel="stylesheet" type="text/css" href="../css/pics.css">
     <link rel="icon" type="image/x-icon" href="../img/quizardfavicon.png">
-
 </head>
 <body>
     <div class="home">
@@ -16,16 +23,19 @@
                 <div class="top-filler"></div>
                 <div class="navlogo-section">
                     <div class="logoside">
-                        <img src="../img/logo.png" alt="logo">
-                        <p class="logo">QUIZARD</p>
+                        <a href="homepage.php">
+							<img src="../img/logo.png" alt="logo">
+							<p class="logo" style="color: white;">QUIZARD</p>
+						</a>
+						
 
-                    </div>
-                    <div class="right-nav">
-                        <div class="navbar">
-                            <!-- put class active when in this tab -->
-                            <a href="">Home</a>
-                            <a href="">Quizzez</a>
-                            <a href="">Scoreboard</a>
+					</div>
+					<div class="right-nav">
+						<div class="navbar">
+							<!-- put class active when in this tab -->
+							<a href="homepage.php">Home</a>
+							<a class="active" href="content.php">Quizzez</a>
+							<a href="scoreboard.php">Scoreboard</a>
 
                         </div>
                         <div class="user-nav">
@@ -43,26 +53,79 @@
                 
             </div>
             <!-- end of header -->
-            <div class="images-container">
-                <div class="row-container">
-                    <div class="image-container">
-                        <img class="image" src="../img/Java.png" alt="Java Image">
+            <!-- insert body here -->
+            <div class="bod">
+                <div class="py-head">
+                    <div class="text">
+                        HTML: 4 Pics
                     </div>
-                    <div class="language-text">Java Script</div>
+                    <button class="exit-button">EXIT</button>
                 </div>
-                <div class="row-container">
-                    <div class="image-container">
-                        <img class="image" src="../img/Html.png" alt="HTML Image">
+
+                <div class="cube-container">
+                    <div class="images">
+                        <div class="image-container">
+                            <!-- Image 1 goes here -->
+                            <img src="image1.png" alt="Image 1">
+                            
+                        </div>
+                        <div class="image-container">
+                            <!-- Image 2 goes here -->
+                            <img src="image2.png" alt="Image 2">
+                        </div>
+                        <div class="image-container">
+                            <!-- Image 3 goes here -->
+                            <img src="image3.png" alt="Image 3">
+                        </div>
+                        <div class="image-container">
+                            <!-- Image 4 goes here -->
+                            <img src="image4.png" alt="Image 4">
+                        </div>
                     </div>
-                    <div class="language-text">HTML</div>
-                </div>
-                <div class="row-container">
-                    <div class="image-container">
-                        <img class="image" src="../img/Python.png" alt="Python Image">
+                    <div class="rit">
+                        <div class="blanks">
+                            <div class="broken-line"></div>
+                            <div class="broken-line"></div>
+                            <div class="broken-line"></div>
+                            <div class="broken-line"></div>
+                        </div>
+                        <div class="alphabet">
+                            <div class="letter">A</div>
+                            <div class="letter">B</div>
+                            <div class="letter">C</div>
+                            <div class="letter">D</div>
+                            <div class="letter">E</div>
+                            <div class="letter">F</div>
+                            <div class="letter">G</div>
+                            <div class="letter">H</div>
+                            <div class="letter">I</div>
+                            <div class="letter">J</div>
+                            <div class="letter">K</div>
+                            <div class="letter">L</div>
+                            <div class="letter">M</div>
+                            <div class="letter">N</div>
+                            <div class="letter">O</div>
+                            <div class="letter">P</div>
+                            <div class="letter">Q</div>
+                            <div class="letter">R</div>
+                            <div class="letter">S</div>
+                            <div class="letter">T</div>
+                            <div class="letter">U</div>
+                            <div class="letter">V</div>
+                            <div class="letter">W</div>
+                            <div class="letter">X</div>
+                            <div class="letter">Y</div>
+                            <div class="letter">Z</div>
+                            
+                        </div>
                     </div>
-                    <div class="language-text">Python</div>
+                    
+                    
+                    
                 </div>
+                
             </div>
+            <!-- etong br br br palitan nyo lang to ng content -->
 
 
             <!-- footer -->
@@ -124,8 +187,8 @@
                 
             </div>
         
+        </div>
     </div>
     
-
 </body>
 </html>

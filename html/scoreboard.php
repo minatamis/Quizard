@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chosen topic</title>
-    <link rel="stylesheet" type="text/css" href="../css/chosen-topic.css">
+    <title>Scoreboard</title>
+    <link rel="stylesheet" type="text/css" href="../css/scoreboard.css">
     <link rel="icon" type="image/x-icon" href="../img/quizardfavicon.png">
 </head>
 <body>
@@ -13,23 +13,25 @@
             <!-- header -->
             <div class="header-container">
                 <div class="top-filler"></div>
-                <div class="navlogo-section">
-                    <div class="logoside">
-                        <img src="../img/logo.png" alt="logo">
-                        <p class="logo">QUIZARD</p>
+                    <div class="navlogo-section">
+                        <a href="homepage.php">
+							<img src="../img/logo.png" alt="logo">
+							<p class="logo" style="color: white;">QUIZARD</p>
+						</a>
+						
 
-                    </div>
-                    <div class="right-nav">
-                        <div class="navbar">
-                            <!-- put class active when in this tab -->
-                            <a href="">Home</a>
-                            <a href="">Quizzez</a>
-                            <a href="">Scoreboard</a>
-
+					</div>
+					<div class="right-nav">
+						<div class="navbar">
+							<!-- put class active when in this tab -->
+							<a href="homepage.php">Home</a>
+							<a href="content.php">Quizzez</a>
+							<a class="active" href="scoreboard.php">Scoreboard</a>
                         </div>
                         <div class="user-nav">
                             <!-- name -->
                             <!-- <p>Username</p> -->
+                            <!-- <img src=""> -->
 
                             <!-- login button -->
                             <a class="login" href="">Log in</a>
@@ -43,24 +45,36 @@
             </div>
             <!-- end of header -->
             <!-- insert body here -->
-            <div class="bod">
-                <h1 class="middle-rectangle-h1">Your Chosen Topic is:</h1>
+            <div class="header">Scoreboard</div>
 
-                <div class="middle-rectangle">
-                    <div class="middle-rectangle-heading">
-                        HTML
-                    </div>
-                    <div class="middle-rectangle-subheading">
-                        Game: 4 pics 1 word
-                    </div>
+            <div class="center-square">
+                <div class="row">
+                    <!-- Content for Row 1 -->
+                    <p>Jemuel  Java Script 8/10</p>
                 </div>
-
-                <div class="bottom-rectangle">
-                    <div class="bottom-rectangle-header">
-                        Play
-                    </div>
+                <div class="row">
+                    <!-- Content for Row 2 -->
+                    <p>John Henry HTML 9/10</p>
+                </div>
+                <div class="row">
+                    <!-- Content for Row 3 -->
+                    <p>Regina Python 10/10</p>
+                </div>
+                <div class="row">
+                    <!-- Content for Row 4 -->
+                    <p>Yuki Java Script 9/10</p>
+                </div>
+                <div class="row">
+                    <!-- Content for Row 5 -->
+                    <p>Jc HTML 9/10</p>
+                </div>
+                <div class="row">
+                    <!-- Content for Row 6 -->
+                    <p>JM Java Script 10/10</p>
                 </div>
             </div>
+            <!-- etong br br br palitan nyo lang to ng content -->
+
 
             <!-- footer -->
             <div class="footer-container">
@@ -120,10 +134,10 @@
                 <p class="cright">Copyright ® 2024 Quizard All rights Reserved</p>
                 
             </div>
-        
+
         </div>
+        
     </div>
+
 </body>
 </html>
-
-
