@@ -1,0 +1,5 @@
+SELECT * FROM db_quizard.tblanswer;
+SELECT T1.fld_question, T0.fldAnswer1, T0.fldAnswer2, T1.fld_answer
+        FROM tblanswer T0
+        LEFT JOIN tbl_questions T1 ON T0.fldQuestionId = T1.fld_questionId
+        WHERE T1.fld_quizId = 1
