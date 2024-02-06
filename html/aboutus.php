@@ -1,13 +1,12 @@
 <?php
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/aboutus.css">
 	<link rel="icon" type="image/x-icon" href="../img/quizardfavicon.png">
 	<title>Quizard</title>
 </head>
@@ -19,23 +18,20 @@ session_start();
 				<div class="top-filler"></div>
 				<div class="navlogo-section">
 					<div class="logoside">
-						<a href="homepage.php">
-							<img src="../img/logo.png" alt="logo">
-							<p class="logo" style="color: white;">QUIZARD</p>
-						</a>
-						
+						<img src="../img/Quizard_LOGO.png" alt="logo">
+						<p class="logo">QUIZARD</p>
 
 					</div>
 					<div class="right-nav">
 						<div class="navbar">
 							<!-- put class active when in this tab -->
-							<a class="active" href="homepage.php">Home</a>
+							<a href="homepage.php">Home</a>
 							<a href="content.php">Quizzez</a>
 							<a href="scoreboard.php">Scoreboard</a>
 
 						</div>
 						<div class="user-nav">
-							<?php
+						<?php
 							if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
 							{
 								echo "<a class='login' href='sign-in.php'>Log in</a>";
@@ -58,35 +54,73 @@ session_start();
 			</div>
 			<!-- end of header -->
 			<!-- insert body here -->
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<!-- etong br br br palitan nyo lang to ng content -->
+			<div class="aboutuscontent">
+				<p class="aboutus">About Us</p>
+                
+                <div class="line1">
+                    <hr>
+                </div>
 
+                <p class="welcome">Welcome to <span>QUIZARD</span></p>   
+                <p class="unleashing">- Unleashing the power of <span>KNOWLEDGE</span></p>
+
+                <div class="img1"> 
+                    <img src="..\img\p1.png" alt="img1">
+                </div>
+                    
+                <div class="line2">
+                    <hr>
+                </div>
+
+                    <div class="pr1">
+                        <p class="p1">Welcome to Quizard, where curiosity meets challenge, and knowledge is the ultimate reward. We're not just a website; we're a dynamic platform that celebrates the joy of learning through interactive quizzes that stimulate your mind and spark your curiosity.</p>
+                    </div>
+
+                        <div class="our">
+                            <p class="ourstory">Our Story:</p>
+                        </div>
+
+                            <div class="img2"> 
+                                <img src="..\img\p2.png" alt="img2">
+                            </div>
+     
+                                <div class="pr2">
+                                    <p class="p2">At Quizard, our journey began with a simple yet powerful idea: learning should be enjoyable. Founded in 2024, we set out to create a space where people from all walks of life could come together to test their knowledge, learn something new, and have fun doing it.</p>
+                                </div>
+								<a href="content.php">
+									<div class="btn">
+                                        <span>Take a QUIZ now!</span>
+                                    </div>
+								</a>
+                                    
+
+                
+			</div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+			<!-- etong br br br palitan nyo lang to ng content -->
 
 			<!-- footer -->
 			<div class="footer-container">
 				<div class="inner-footer">
 					<div class="left-foot">
 						<div class="inside-left">
-							<a href="homepage.php"><img src="../img/quizardfavicon.png" alt="logo"></a>
+							<img src="../img/quizardfavicon.png" alt="logo">
 							
 							<p>“Unleash your Knowledge, embrace the Challenges.“</p>
 							<p class="from">@Quizard</p>
@@ -139,8 +173,9 @@ session_start();
 				<p class="cright">Copyright ® 2024 Quizard All rights Reserved</p>
 				
 			</div>
-		
+
 		</div>
+		
 	</div>
 
 </body>

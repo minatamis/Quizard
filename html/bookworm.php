@@ -14,6 +14,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <title>Quizard</title>
     <link rel="stylesheet" type="text/css" href="../css/bookworm.css">
     <link rel="icon" type="image/x-icon" href="../img/quizardfavicon.png">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 
 </head>
 <body>
@@ -40,12 +42,20 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
                         </div>
                         <div class="user-nav">
-                            <!-- name -->
-                            <!-- <p>Username</p> -->
-
-                            <!-- login button -->
-                            <a class="login" href="">Log in</a>
-                            <a class="reg" href="">Register</a>                         
+                        <?php
+							if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+							{
+								echo "<a class='login' href='sign-in.php'>Log in</a>";
+								echo "<a class='reg' href='sign-up.php'>Register</a>";
+								
+							}
+							else
+							{
+								echo "<a class='username'>User: " . $_SESSION["username"] . "</a>";
+								echo "<a class='reg' href='logout.php'>Log out</a>";
+							}
+							
+							?>                        
                         </div>
                         
                     </div>
@@ -60,7 +70,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     <div class="text">
                         Python: Bookworm
                     </div>
-                    <button class="exit-button">EXIT</button>
+                    <button href="homepage.php" class="exit-button">EXIT</button>
                 </div>
 
                 <div class="image-container">
@@ -77,6 +87,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             <div class="life-right"></div>
                             <div class="life-right"></div>
                             <div class="life-right"></div>
+                            <div class="life-right"></div>
+                            <div class="life-right"></div>
+                            <div class="life-right"></div>
+                            <div class="life-right"></div>
+                            <div class="life-right"></div>
+                            <div class="life-right"></div>
+                            <div class="life-right"></div>
                         </div>
                         <div class="wizard"></div>
                     </div>
@@ -84,13 +101,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 </div>
 
                 <div class="questions">
-                    <p>Name the Python Library modules which need to be imported to invoke the; load ()</p>
+                    <p id="question-label">Loading...</p>
                 </div>
 
                 <div class="button-container">
-                    <button class="choice-button" onclick="handleChoice('option1')">A. Pickle</button>
-                    <button class="choice-button" onclick="handleChoice('option2')">B. Random</button>
+                    <button class="choice-button" id="btn1">Option 1</button>
+                    <button class="choice-button" id="btn2">Option 2</button>
                 </div>
+
+                <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                <script src="../script/bookworm.js"></script>
                 
             </div>
 
@@ -108,10 +128,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </div>
                     <div class="mid-foot">
                         <div class="inside-mid">
-                            <p class="head">Reseources</p>
-                            <p><a href="">Overview</a></p>
-                            <p><a href="">About Us</a></p>
-                            <p><a href="">Contact Support</a></p>
+                        <p class="head">Reseources</p>
+							<p><a href="help-center.php">Overview</a></p>
+							<p><a href="aboutus.php">About Us</a></p>
+							<p><a href="contact-us.php">Contact Support</a></p>
 
                         </div>
                         

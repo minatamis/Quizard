@@ -90,6 +90,9 @@ body, html{
 .header-container .right-nav .user-nav .login:hover{
 	background-color: #B2DB55;
 }
+.header-container .right-nav .user-nav .username{
+	width: 100px;
+}
 .header-container .right-nav .user-nav .reg{
 	background-color: #B336EE;
 	padding: 10px 15px 10px 15px;

@@ -1,0 +1,232 @@
+@import url('style.css');
+.section-one {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('../img/hang.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+.py-head{
+    display: flex;
+/*    border: 1px solid white;*/
+    margin-top: 50px;
+}
+.text {
+    font-family: 'Irish Grover', sans-serif; 
+    color: #F6F6F6; 
+    font-size: 40px;
+/*    position: fixed;*/
+    top: 80px;
+    left: 50px;
+    margin: auto;
+    font-weight: bold;
+    
+}
+
+.exit-button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    padding: 5px;
+    width: 100px;
+    height: 40px;
+    background-color: #7862F8; 
+    color: #FFFFFF; 
+    border: none;
+    cursor: pointer;
+    border-radius: 100px;
+  }
+
+  .exit-button:hover {
+    background-color: rgba(217, 217, 217, 0.537);
+    color: #FFFFFF;
+}
+
+
+.cube-container {
+    width: auto;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid white; */
+    padding: 20px 100px;
+    display: flex;
+    margin: auto;
+}
+/* .images{
+    width: 750px;
+    height: 750px;
+   border: 1px solid white;
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+/* .image-container {
+    width: 370px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid white;
+} */
+
+.image-container img {
+    width: 168px;
+    height: 500px;
+    /* object-fit: cover; */
+    position: absolute;
+}
+
+.scontainer {
+    background-color: #7862F8;
+    width: 300px;
+    height: 500px;
+    /* position: absolute; */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 100px;
+    margin-top: 500px;
+    /* border: 1px solid white; */
+  }
+  
+  .stickman {
+    position: relative;
+    width: 50px;
+    height: 100px;
+    margin: 0 auto;
+  }
+  
+  .hd {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 50px;
+    left: -35px;
+  }
+  
+  .bd {
+    width: 25px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 160px;
+    left: 12px;
+  }
+  
+  .left-arm, .right-arm {
+    width: 22px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 200px;
+  }
+  
+  .left-arm {
+    left: 50px;
+    transform: rotate(-45deg);
+  }
+  
+  .right-arm {
+    right: 50px;
+    transform: rotate(45deg);
+  }
+  
+  .left-leg, .right-leg {
+    width: 22px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    bottom: -330px;
+  }
+  
+  .left-leg {
+    left: -15px;
+    transform: rotate(35deg);
+  }
+  
+  .right-leg {
+    right: -15px;
+    transform: rotate(-35deg);
+  }
+
+.rit{
+    height: 100%;
+    width: 50%;
+/*    border: 1px solid white;*/
+    margin: auto;
+}
+
+.blanks{
+    width: 600px;
+    height: 100px;
+    display: flex;
+    margin: auto;
+   /* border: 1px solid white; */
+}
+.broken-line {
+    position: relative;
+    width: 80px;
+    height: 100px;
+    border-bottom: 5px solid white;
+    margin: auto;
+    color: white;
+    font-size: 50px;
+    margin-top: px;
+
+}
+
+.alphabet{
+  height: 250px;
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  /* border: 1px solid white; */
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.letter{
+  background-color: #C8F560;
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: auto;
+  font-size: 50px;
+}
+.letter:hover{
+  background-color: #B2DB55;
+}
+
+/* .alphabet span{
+    background-color: #C8F560;
+    width: 80px;
+    height: 75px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 30px;
+    font-size: 50px;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: -150px;
+} */
+
+.txt{
+    background-color: #C8F560;
+    width: 70%;
+    height: 130px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: auto;
+    font-size: 40px;
+    font-family: 'Poppins';
+    text-align: center;
+    margin-top: 50px;
+}

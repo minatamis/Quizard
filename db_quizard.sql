@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2024 at 02:02 PM
+-- Generation Time: Feb 06, 2024 at 06:33 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -29,11 +29,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_checkEmailExist` (IN `email` VAR
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_checkUser` (IN `userEmail` VARCHAR(100))   SELECT tbl_users.fld_userId, tbl_users.fld_userName, tbl_users.fld_userPass FROM tbl_users WHERE tbl_users.fld_userEmail=userEmail$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getQuiz` (IN `quizId` INT(20))   SELECT tbl_questions.fld_questionId, tbl_quiz.fld_quizName, tbl_questions.fld_question, tbl_questions.fld_answer
-FROM tbl_questions
-LEFT JOIN tbl_quiz
-ON tbl_questions.fld_quizId=tbl_quiz.fld_quizId
-WHERE tbl_quiz.fld_quizId=quizId$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getQuestions` ()   SELECT T1.fld_question, T0.fld_answer1, T0.fld_answer2, T1.fld_answer
+FROM tbl_answers T0
+LEFT JOIN tbl_questions T1 ON T0.fld_questionId = T1.fld_questionId$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getScores` ()   SELECT tbl_users.fld_userName, tbl_quiz.fld_quizName, tbl_score.fld_score
+FROM tbl_score
+JOIN tbl_users ON tbl_score.fld_userId = tbl_users.fld_userId
+JOIN tbl_quiz ON tbl_score.fld_quizId = tbl_quiz.fld_gameId$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertScore` (IN `score` INT(20), IN `userId` INT(20), IN `quizId` INT)   INSERT INTO tbl_score (tbl_score.fld_score, tbl_score.fld_userId, tbl_score.fld_quizId)
 VALUES (score, userID, quizId)$$
@@ -42,6 +45,45 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insertUser` (IN `name` VARCHAR(1
 VALUES (name, pass, email)$$
 
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_answers`
+--
+
+CREATE TABLE `tbl_answers` (
+  `fld_answerId` int(20) NOT NULL,
+  `fld_questionId` int(20) NOT NULL,
+  `fld_answer1` varchar(50) NOT NULL,
+  `fld_answer2` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_answers`
+--
+
+INSERT INTO `tbl_answers` (`fld_answerId`, `fld_questionId`, `fld_answer1`, `fld_answer2`) VALUES
+(1, 1, 'var', 'varchar'),
+(2, 2, 'forin', 'foreach'),
+(3, 3, 'Document Object Mode', 'Daring Ostrich Migration'),
+(4, 4, 'parselnt', 'Integer'),
+(5, 5, '\"===\"', '\"+++\"'),
+(6, 6, 'function', 'Lecture'),
+(7, 7, 'length', 'width'),
+(8, 8, 'push', 'pull'),
+(9, 9, 'Type checking', 'Inventory'),
+(10, 10, 'click', 'Dot'),
+(11, 11, 'style', 'asdfg'),
+(12, 12, 'image', 'hjghn'),
+(13, 13, 'break', 'erdgf'),
+(14, 14, 'table', 'cvbnn'),
+(15, 15, 'input', 'dfghm'),
+(16, 16, 'def', 'jcghnby'),
+(17, 17, 'int', 'ghjedfl'),
+(18, 18, 'for', 'sbntetg'),
+(19, 19, 'var', 'bstysmj'),
+(20, 20, 'len', 'fmyudrb');
 
 -- --------------------------------------------------------
 
@@ -59,67 +101,9 @@ CREATE TABLE `tbl_gametype` (
 --
 
 INSERT INTO `tbl_gametype` (`fld_gameId`, `fld_gameName`) VALUES
-(1, 'Hangman'),
+(1, 'Bookworm'),
 (2, '4 pics 1 word'),
-(3, 'Bookworm');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_pictures`
---
-
-CREATE TABLE `tbl_pictures` (
-  `fld_pictureId` int(20) NOT NULL,
-  `fld_picName` varchar(100) NOT NULL,
-  `fld_questionId` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_pictures`
---
-
-INSERT INTO `tbl_pictures` (`fld_pictureId`, `fld_picName`, `fld_questionId`) VALUES
-(1, '1image1.png', 11),
-(2, '1image2.png', 11),
-(3, '1image2.png', 11),
-(4, '1image2.png', 11),
-(5, '2image1.png', 12),
-(6, '2image2.png', 12),
-(7, '2mage3.png', 12),
-(8, '2image4.png', 12),
-(9, '3image1.jpg', 13),
-(10, '3image2.jpg', 13),
-(11, '3image3.jpg', 13),
-(12, '3image4.jpg', 13),
-(13, '4image1.jpg', 14),
-(14, '4image2.jpg', 14),
-(15, '4image3.jpg', 14),
-(16, '4image4.jpg', 14),
-(17, '5image1.jpg', 15),
-(18, '5image2.jpg', 15),
-(19, '5image3.jpg', 15),
-(20, '5image4.jpg', 15),
-(21, '6image1.jpg', 16),
-(22, '6image2.jpg', 16),
-(23, '6image3.jpg', 16),
-(24, '6image4.jpg', 16),
-(25, '7image1.jpg', 17),
-(26, '7image2.jpg', 17),
-(27, '7image3.jpg', 17),
-(28, '7image4.jpg', 17),
-(29, '8image1.jpg', 18),
-(30, '8image2.jpg', 18),
-(31, '8image3.jpg', 18),
-(32, '8image4.jpg', 18),
-(33, '9image1.jpg', 19),
-(34, '9image2.jpg', 19),
-(35, '9image3.jpg', 19),
-(36, '9image4.jpg', 19),
-(37, '10image1.jpg', 20),
-(38, '10image2.jpg', 20),
-(39, '10image3.jpg', 20),
-(40, '10image4.jpg', 20);
+(3, 'Hangman');
 
 -- --------------------------------------------------------
 
@@ -149,26 +133,16 @@ INSERT INTO `tbl_questions` (`fld_questionId`, `fld_question`, `fld_answer`, `fl
 (8, 'What method is used to add an element to the end of an array?', 'push', 1),
 (9, 'In JavaScript, what is the purpose of the typeof operator?', 'Type checking', 1),
 (10, 'Which event is triggered when a user clicks on an HTML element?', 'click', 1),
-(11, 'What does HTML stand for?', 'Hypertext Markup Language', 2),
-(12, 'Which HTML tag is used for creating hyperlinks?', 'a', 2),
-(13, 'What is the HTML tag used for creating an unordered list?', 'ul', 2),
-(14, 'Which tag is used to define the structure of an HTML document, such as headings and paragraphs?', 'body', 2),
-(15, 'What attribute is used to provide alternative text for images in HTML?', 'alt', 2),
-(16, 'In HTML, which tag is used for creating a line break?', 'br', 2),
-(17, 'What is the purpose of the HTML <meta> tag?', 'metadata', 2),
-(18, 'Which HTML tag is used for defining the main content of an HTML document?', 'main', 2),
-(19, 'What is the purpose of the HTML <head> element?', 'metadata', 2),
-(20, 'Which HTML tag is used for creating a table?', 'table', 2),
-(21, 'What is the term for a named storage location in Python?', 'variable', 3),
-(22, 'Which keyword is used for defining a function in Python?', 'def', 3),
-(23, 'What data type is used for whole numbers in Python?', 'int', 3),
-(24, 'In Python, what is the term for a block of code that only runs when a certain condition is true?', 'if', 3),
-(25, 'Which operator is used for exponentiation in Python?', '**', 3),
-(26, 'What is the built-in function used to get the length of a sequence in Python?', 'len', 3),
-(27, 'What is the purpose of the elif keyword in Python?', 'else if', 3),
-(28, 'Which loop is used for iterating over a sequence (like a list or string) in Python?', 'for', 3),
-(29, 'What is the term for a collection of elements where each element is indexed in Python?', 'list', 3),
-(30, 'Which module is used for working with dates and times in Python?', 'datetime', 3);
+(11, 'Which attribute is used to define inline styles in HTML?', 'style', 2),
+(12, 'What HTML tag is used for inserting an image?', 'image', 2),
+(13, 'Which HTML tag is used to create a line break?', 'break', 2),
+(14, 'What is the HTML tag for defining a table?', 'table', 2),
+(15, 'What HTML tag is used for creating an input field?', 'input', 2),
+(16, 'Which keyword is used for defining a function in Python?', 'def', 3),
+(17, 'What data type is used for whole numbers in Python?', 'int', 3),
+(18, 'Which loop is used for iterating over a sequence (like a list or string) in Python?', 'for', 3),
+(19, 'How do you declare a variable in Python?', 'var', 3),
+(20, 'How do you check the length of a list in Python?', 'len', 3);
 
 -- --------------------------------------------------------
 
@@ -204,6 +178,14 @@ CREATE TABLE `tbl_score` (
   `fld_quizId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tbl_score`
+--
+
+INSERT INTO `tbl_score` (`fld_scoreId`, `fld_score`, `fld_userId`, `fld_quizId`) VALUES
+(4, 8, 5, 1),
+(7, 5, 5, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -222,23 +204,24 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`fld_userId`, `fld_userName`, `fld_userPass`, `fld_userEmail`) VALUES
-(5, 'Jem', 'jem123', 'jem@gmail.com');
+(5, 'Jem', 'jem123', 'jem@gmail.com'),
+(6, 'Yuki', 'jcjcjc123', 'jcboi@gmail.com');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `tbl_answers`
+--
+ALTER TABLE `tbl_answers`
+  ADD PRIMARY KEY (`fld_answerId`);
+
+--
 -- Indexes for table `tbl_gametype`
 --
 ALTER TABLE `tbl_gametype`
   ADD PRIMARY KEY (`fld_gameId`);
-
---
--- Indexes for table `tbl_pictures`
---
-ALTER TABLE `tbl_pictures`
-  ADD PRIMARY KEY (`fld_pictureId`);
 
 --
 -- Indexes for table `tbl_questions`
@@ -270,16 +253,16 @@ ALTER TABLE `tbl_users`
 --
 
 --
+-- AUTO_INCREMENT for table `tbl_answers`
+--
+ALTER TABLE `tbl_answers`
+  MODIFY `fld_answerId` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
 -- AUTO_INCREMENT for table `tbl_gametype`
 --
 ALTER TABLE `tbl_gametype`
-  MODIFY `fld_gameId` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `tbl_pictures`
---
-ALTER TABLE `tbl_pictures`
-  MODIFY `fld_pictureId` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `fld_gameId` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_questions`
@@ -297,13 +280,13 @@ ALTER TABLE `tbl_quiz`
 -- AUTO_INCREMENT for table `tbl_score`
 --
 ALTER TABLE `tbl_score`
-  MODIFY `fld_scoreId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `fld_scoreId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `fld_userId` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `fld_userId` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -39,12 +39,20 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
                         </div>
                         <div class="user-nav">
-                            <!-- name -->
-                            <!-- <p>Username</p> -->
-
-                            <!-- login button -->
-                            <a class="login" href="">Log in</a>
-                            <a class="reg" href="">Register</a>                         
+                        <?php
+							if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+							{
+								echo "<a class='login' href='sign-in.php'>Log in</a>";
+								echo "<a class='reg' href='sign-up.php'>Register</a>";
+								
+							}
+							else
+							{
+								echo "<a class='username'>User: " . $_SESSION["username"] . "</a>";
+								echo "<a class='reg' href='logout.php'>Log out</a>";
+							}
+							
+							?>                        
                         </div>
                         
                     </div>
@@ -65,12 +73,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         Game: Bookworm
                     </div>
                 </div>
-
-                <div class="bottom-rectangle">
-                    <div class="bottom-rectangle-header">
-                        Play
+                <a href="bookworm.php">
+                    <div class="bottom-rectangle">
+                        <div class="bottom-rectangle-header">
+                            Play
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
 
             <!-- footer -->
@@ -88,9 +97,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     <div class="mid-foot">
                         <div class="inside-mid">
                             <p class="head">Reseources</p>
-                            <p><a href="">Overview</a></p>
-                            <p><a href="">About Us</a></p>
-                            <p><a href="">Contact Support</a></p>
+							<p><a href="help-center.php">Overview</a></p>
+							<p><a href="aboutus.php">About Us</a></p>
+							<p><a href="contact-us.php">Contact Support</a></p>
 
                         </div>
                         

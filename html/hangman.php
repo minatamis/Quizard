@@ -11,8 +11,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chosen topic</title>
-    <link rel="stylesheet" type="text/css" href="../css/chosen-topic.css">
+    <title>Game Hangman</title>
+    <link rel="stylesheet" type="text/css" href="../css/hangman.css">
     <link rel="icon" type="image/x-icon" href="../img/quizardfavicon.png">
 </head>
 <body>
@@ -23,17 +23,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <div class="top-filler"></div>
                 <div class="navlogo-section">
                     <div class="logoside">
-                        <a href="homepage.php">
-							<img src="../img/logo.png" alt="logo">
-							<p class="logo" style="color: white;">QUIZARD</p>
-						</a>
-						
+                        <img src="../img/logo.png" alt="logo">
+                        <p class="logo">QUIZARD</p>
 
-					</div>
-					<div class="right-nav">
-						<div class="navbar">
-							<!-- put class active when in this tab -->
-							<a href="homepage.php">Home</a>
+                    </div>
+                    <div class="right-nav">
+                        <div class="navbar">
+                            <!-- put class active when in this tab -->
+                            <a href="homepage.php">Home</a>
 							<a class="active" href="content.php">Quizzez</a>
 							<a href="scoreboard.php">Scoreboard</a>
 
@@ -52,7 +49,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 								echo "<a class='reg' href='logout.php'>Log out</a>";
 							}
 							
-							?>                         
+							?>                        
                         </div>
                         
                     </div>
@@ -63,24 +60,66 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <!-- end of header -->
             <!-- insert body here -->
             <div class="bod">
-                <h1 class="middle-rectangle-h1">Your Chosen Topic is:</h1>
-
-                <div class="middle-rectangle">
-                    <div class="middle-rectangle-heading">
-                        HTML
+                <div class="py-head">
+                    <div class="text">
+                        Java Script: Hangman
                     </div>
-                    <div class="middle-rectangle-subheading">
-                        Game: 4 pics 1 word
+                    <button href="homepage.php" class="exit-button">EXIT</button>
+                </div>
+
+                <div class="txt-container">
+                    <div class="txt" id="question-label">
+                        Loading...
                     </div>
                 </div>
-                <a href="4pics.php">
-                    <div class="bottom-rectangle">
-                        <div class="bottom-rectangle-header">
-                            Play
+
+                <div class="cube-container">
+                    <div class="scontainer">
+                        <div class="image-container">
+                            <!-- Image 1 goes here -->
+                            <img src="../img/image6.png" alt="Image 6">
+                            
+                        </div>
+
+                        <div class="stickman">
+                          <div class="hd" id="part0"></div>
+                          <div class="bd" id="part1"></div>
+                          <div class="left-arm" id="part2"></div>
+                          <div class="right-arm" id="part3"></div>
+                          <div class="left-leg" id="part4"></div>
+                          <div class="right-leg" id="part5"></div>
                         </div>
                     </div>
-                </a>
+
+                
+
+                    <div class="rit">
+                        <div class="blanks">
+                            <div class="broken-line" id="blnk0"></div>
+                            <div class="broken-line" id="blnk1"></div>
+                            <div class="broken-line" id="blnk2"></div>
+                        </div>
+                        <div class="alphabet">
+                            <div class="letter" id="lttr1">X</div>
+                            <div class="letter" id="lttr2">X</div>
+                            <div class="letter" id="lttr3">X</div>
+                            <div class="letter" id="lttr4">X</div>
+                            <div class="letter" id="lttr5">X</div>
+                            <div class="letter" id="lttr6">X</div>
+                            <div class="letter" id="lttr7">X</div>
+                            <div class="letter" id="lttr8">X</div>
+                            <div class="letter" id="lttr9">X</div>
+                            <div class="letter" id="lttr10">X</div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>    
+                
             </div>
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script src="../script/hangman.js"></script>
+
 
             <!-- footer -->
             <div class="footer-container">
@@ -143,7 +182,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         
         </div>
     </div>
+    
 </body>
 </html>
-
-

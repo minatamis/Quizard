@@ -1,10 +1,40 @@
 <?php
 session_start();
+
+require_once "config.php";
  
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: sign-in.php");
     exit;
 }
+
+if(isset($_GET["score"]) && isset($_GET["message"])&& isset($_GET["game"])) {
+    $score = $_GET["score"];
+    $message = $_GET["message"];
+    $gameId = $_GET["game"];
+}
+
+$sql = "CALL `sp_insertScore`(?,?,?);";
+
+if($stmt = mysqli_prepare($link, $sql)) {
+    mysqli_stmt_bind_param($stmt, "iii", $param_score, $param_user, $param_gameId);
+    
+    
+
+    if(mysqli_stmt_execute($stmt)){
+        $param_score = $score;
+        $param_user = $_SESSION["id"];
+        $param_gameId = $gameId;
+    } else{
+        echo '<script>alert("Error!")</script>';
+    }
+
+    mysqli_stmt_close($stmt);
+}
+mysqli_close($link);
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,17 +64,25 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 						<div class="navbar">
 							<!-- put class active when in this tab -->
 							<a href="homepage.php">Home</a>
-							<a href="content.php">Quizzez</a>
+							<a class="active" href="content.php">Quizzez</a>
 							<a href="scoreboard.php">Scoreboard</a>
 
                         </div>
                         <div class="user-nav">
-                            <!-- name -->
-                            <!-- <p>Username</p> -->
-
-                            <!-- login button -->
-                            <a class="login" href="">Log in</a>
-                            <a class="reg" href="">Register</a>                         
+                        <?php
+							if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+							{
+								echo "<a class='login' href='sign-in.php'>Log in</a>";
+								echo "<a class='reg' href='sign-up.php'>Register</a>";
+								
+							}
+							else
+							{
+								echo "<a class='username'>User: " . $_SESSION["username"] . "</a>";
+								echo "<a class='reg' href='logout.php'>Log out</a>";
+							}
+							
+							?>                        
                         </div>
                         
                     </div>
@@ -55,15 +93,23 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <!-- end of header -->
             <!-- insert body here -->
             <div class="header">
-                CONGRATULATIONS!
+                <?= $message ?>
             </div>
 
             <div class="subheader">
                 Your Score is:
             </div>
-
+            
             <div class="another-subheader">
-                10/10
+                <?= $score; 
+                    if($gameId==1)
+                    {
+                        echo "/10";
+                    }else
+                    {
+                        echo "/5";
+                    }
+                ?>
             </div>
 
             <div class="square">
@@ -87,9 +133,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     <div class="mid-foot">
                         <div class="inside-mid">
                             <p class="head">Reseources</p>
-                            <p><a href="">Overview</a></p>
-                            <p><a href="">About Us</a></p>
-                            <p><a href="">Contact Support</a></p>
+							<p><a href="help-center.php">Overview</a></p>
+							<p><a href="aboutus.php">About Us</a></p>
+							<p><a href="contact-us.php">Contact Support</a></p>
 
                         </div>
                         

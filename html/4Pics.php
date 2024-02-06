@@ -6,6 +6,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,12 +40,20 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
                         </div>
                         <div class="user-nav">
-                            <!-- name -->
-                            <!-- <p>Username</p> -->
-
-                            <!-- login button -->
-                            <a class="login" href="">Log in</a>
-                            <a class="reg" href="">Register</a>                         
+                        <?php
+							if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+							{
+								echo "<a class='login' href='sign-in.php'>Log in</a>";
+								echo "<a class='reg' href='sign-up.php'>Register</a>";
+								
+							}
+							else
+							{
+								echo "<a class='username'>User: " . $_SESSION["username"] . "</a>";
+								echo "<a class='reg' href='logout.php'>Log out</a>";
+							}
+							
+							?>                        
                         </div>
                         
                     </div>
@@ -59,73 +68,69 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     <div class="text">
                         HTML: 4 Pics
                     </div>
-                    <button class="exit-button">EXIT</button>
+                    <button href="homepage.php" class="exit-button">EXIT</button>
+                </div>
+
+                <div class="txt-container">
+                    <div class="txt" id="question-label">
+                        Loading...
+                    </div>
                 </div>
 
                 <div class="cube-container">
                     <div class="images">
-                        <div class="image-container">
+                        <div class="image-container" id="img1">
                             <!-- Image 1 goes here -->
-                            <img src="image1.png" alt="Image 1">
-                            
+                            <!-- <img> -->
                         </div>
-                        <div class="image-container">
+                        <div class="image-container" id="img2">
                             <!-- Image 2 goes here -->
-                            <img src="image2.png" alt="Image 2">
+                            <!-- <img > -->
                         </div>
-                        <div class="image-container">
+                        <div class="image-container" id="img3">
                             <!-- Image 3 goes here -->
-                            <img src="image3.png" alt="Image 3">
+                            <!-- <img> -->
                         </div>
-                        <div class="image-container">
+                        <div class="image-container" id="img4">
                             <!-- Image 4 goes here -->
-                            <img src="image4.png" alt="Image 4">
+                            <!-- <img> -->
                         </div>
                     </div>
                     <div class="rit">
+
                         <div class="blanks">
-                            <div class="broken-line"></div>
-                            <div class="broken-line"></div>
-                            <div class="broken-line"></div>
-                            <div class="broken-line"></div>
+                            <div class="broken-line" id="blnk0"></div>
+                            <div class="broken-line" id="blnk1"></div>
+                            <div class="broken-line" id="blnk2"></div>
+                            <div class="broken-line" id="blnk3"></div>
+                            <div class="broken-line" id="blnk4"></div>
                         </div>
                         <div class="alphabet">
-                            <div class="letter">A</div>
-                            <div class="letter">B</div>
-                            <div class="letter">C</div>
-                            <div class="letter">D</div>
-                            <div class="letter">E</div>
-                            <div class="letter">F</div>
-                            <div class="letter">G</div>
-                            <div class="letter">H</div>
-                            <div class="letter">I</div>
-                            <div class="letter">J</div>
-                            <div class="letter">K</div>
-                            <div class="letter">L</div>
-                            <div class="letter">M</div>
-                            <div class="letter">N</div>
-                            <div class="letter">O</div>
-                            <div class="letter">P</div>
-                            <div class="letter">Q</div>
-                            <div class="letter">R</div>
-                            <div class="letter">S</div>
-                            <div class="letter">T</div>
-                            <div class="letter">U</div>
-                            <div class="letter">V</div>
-                            <div class="letter">W</div>
-                            <div class="letter">X</div>
-                            <div class="letter">Y</div>
-                            <div class="letter">Z</div>
+                            <div class="letter" id="lttr1">X</div>
+                            <div class="letter" id="lttr2">X</div>
+                            <div class="letter" id="lttr3">X</div>
+                            <div class="letter" id="lttr4">X</div>
+                            <div class="letter" id="lttr5">X</div>
+                            <div class="letter" id="lttr6">X</div>
+                            <div class="letter" id="lttr7">X</div>
+                            <div class="letter" id="lttr8">X</div>
+                            <div class="letter" id="lttr9">X</div>
+                            <div class="letter" id="lttr10">X</div>
                             
                         </div>
+                        <div class="but">
+                            <button id="clear">Clear</button>
+                            <button id="next">Next</button>
+                        </div>
                     </div>
-                    
+                    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                    <script src="../script/4pics.js"></script>
                     
                     
                 </div>
                 
             </div>
-            <!-- etong br br br palitan nyo lang to ng content -->
+            
 
 
             <!-- footer -->
@@ -142,10 +147,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </div>
                     <div class="mid-foot">
                         <div class="inside-mid">
-                            <p class="head">Reseources</p>
-                            <p><a href="">Overview</a></p>
-                            <p><a href="">About Us</a></p>
-                            <p><a href="">Contact Support</a></p>
+                        <p class="head">Reseources</p>
+							<p><a href="help-center.php">Overview</a></p>
+							<p><a href="aboutus.php">About Us</a></p>
+							<p><a href="contact-us.php">Contact Support</a></p>
 
                         </div>
                         
