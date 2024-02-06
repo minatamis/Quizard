@@ -1,80 +1,68 @@
-from pyscript import $, jQuery
+# Install required modules
+import requests
+import pyscript
+
+# Define functions
+def fetch_data_from_php(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print('Error fetching data from example.php.')
+        return None
 
 def update_question_and_answers(data, cnt):
-    if len(data) > cnt < 10:
-        question_label.text(data[cnt]['question'])
+    if len(data) > cnt:
+        question_label.text = data[cnt]['question']
         answer[0] = data[cnt]['answer1']
         answer[1] = data[cnt]['answer2']
         shuffle_array(answer)
-        $("#btn1").text(answer[0])
-        $("#btn2").text(answer[1])
+        btn1.text = answer[0]
+        btn2.text = answer[1]
+        global correct_answer
         correct_answer = data[cnt]['answer']
     else:
-        show_score(score, lives)
+        print('No more questions available.')
 
 def shuffle_array(array):
-    import random
     for i in range(len(array) - 1, 0, -1):
         j = random.randint(0, i)
         array[i], array[j] = array[j], array[i]
 
 def compare_if_correct(answer):
-    global score, lives
     if answer == correct_answer:
-        reduce_lives(".life-right")
-        score += 1
+        print(True)
     else:
-        reduce_lives(".life")
-        lives -= 1
+        print(False)
 
-def reduce_lives(life):
-    lives = $(life)
-    remaining_lives = lives.filter(':visible')
+# Specify the URL for 'example.php'
+example_php_url = '../html/example.php'  # Replace with the actual URL
 
-    if len(remaining_lives) > 1:
-        remaining_lives.last().hide()
-    else:
-        show_score(score, lives)
+# Fetch data from 'example.php'
+data = fetch_data_from_php(example_php_url)
 
-def show_score(score, lives):
-    global message, game
-    if lives > 0:
-        message = "Congratulations!"
-    else:
-        message = "You Died!"
-    window.location.replace("congrats.php?score=" + str(score) + "&message=" + message + "&game=" + str(game))
+if data:
+    # Initialize variables
+    answer = [None, None]
+    correct_answer = None
+    cnt = 0
 
-cnt = 0
-score = 0
-lives = 3
-correct_answer = None
-answer = [None, None]
-message = None
-game = 1
+    # Execute functions
+    update_question_and_answers(data, cnt)
 
-jQuery(document).ready(lambda: (
-    buttons = document.getElementsByClassName('choice-button'),
-    question_label = $('#question-label'),
+    # Define button click events
+    def btn1_click():
+        compare_if_correct(btn1.text)
+        global cnt
+        cnt += 1
+        update_question_and_answers(data, cnt)
 
-    jQuery.ajax({
-        'url': '../html/getQuestions.php',
-        'type': 'GET',
-        'dataType': 'json',
-        'success': lambda data: (
-            update_question_and_answers(data, cnt),
-            $('#btn1').click(lambda: (
-                compare_if_correct($("#btn1").text()),
-                cnt += 1,
-                update_question_and_answers(data, cnt)
-            )),
-            $('#btn2').click(lambda: (
-                compare_if_correct($("#btn2").text()),
-                cnt += 1,
-                update_question_and_answers(data, cnt)
-            ))
-        ),
-        'error': lambda data: (
-            console.error('Error fetching new questions and answers. ')
-        )
-    })
-))
+    def btn2_click():
+        compare_if_correct(btn2.text)
+        global cnt
+        cnt += 1
+        update_question_and_answers(data, cnt)
+
+    # Simulate button clicks
+    btn1_click()
+    btn2_click()
