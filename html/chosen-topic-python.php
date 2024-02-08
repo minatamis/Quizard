@@ -67,7 +67,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
                 <div class="middle-rectangle">
                     <div class="middle-rectangle-heading">
-                        Python
+                        Javascript
                     </div>
                     <div class="middle-rectangle-subheading">
                         Game: Bookworm

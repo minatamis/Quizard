@@ -68,7 +68,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     <div class="text">
                         HTML: 4 Pics
                     </div>
-                    <button href="homepage.php" class="exit-button">EXIT</button>
+                    <a href="content.php"><button class="exit-button">EXIT</button></a>
                 </div>
 
                 <div class="txt-container">

@@ -61,10 +61,10 @@ session_start();
                 <div class="row-container">
                     <div class="image-container">
                         <a href="chosen-topic-javascript.php">
-                            <img class="image" src="../img/Java.png" alt="Java Image">
+                            <img class="image" src="../img/Python.png" alt="Java Image">
                         </a>
                     </div>
-                    <div class="language-text">Java Script</div>
+                    <div class="language-text">Python</div>
                 </div>
                 <div class="row-container">
                     <div class="image-container">
@@ -77,10 +77,10 @@ session_start();
                 <div class="row-container">
                     <div class="image-container">
                         <a href="chosen-topic-python.php">
-                            <img class="image" src="../img/Python.png" alt="Python Image">
+                            <img class="image" src="../img/Java.png" alt="Python Image">
                         </a>
                     </div>
-                    <div class="language-text">Python</div>
+                    <div class="language-text">Javascript</div>
                 </div>
             </div>
 

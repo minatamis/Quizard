@@ -17,14 +17,16 @@ if(isset($_GET["score"]) && isset($_GET["message"])&& isset($_GET["game"])) {
 $sql = "CALL `sp_insertScore`(?,?,?);";
 
 if($stmt = mysqli_prepare($link, $sql)) {
+
+        $param_score = $score;
+        $param_user = $_SESSION["id"];
+        $param_gameId = $gameId;
     mysqli_stmt_bind_param($stmt, "iii", $param_score, $param_user, $param_gameId);
     
     
 
     if(mysqli_stmt_execute($stmt)){
-        $param_score = $score;
-        $param_user = $_SESSION["id"];
-        $param_gameId = $gameId;
+        echo '<script>console.log("Nice")</script>';
     } else{
         echo '<script>alert("Error!")</script>';
     }
@@ -112,9 +114,11 @@ mysqli_close($link);
                 ?>
             </div>
 
+            <a href="homepage.php">
             <div class="square">
                 <span class="square-text">Back to Home</span>
             </div>
+            </a>
             <!-- etong br br br palitan nyo lang to ng content -->
 
 

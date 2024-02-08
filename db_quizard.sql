@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2024 at 06:33 PM
+-- Generation Time: Feb 08, 2024 at 04:01 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -67,7 +67,7 @@ INSERT INTO `tbl_answers` (`fld_answerId`, `fld_questionId`, `fld_answer1`, `fld
 (1, 1, 'var', 'varchar'),
 (2, 2, 'forin', 'foreach'),
 (3, 3, 'Document Object Mode', 'Daring Ostrich Migration'),
-(4, 4, 'parselnt', 'Integer'),
+(4, 4, 'parseInt', 'Integer'),
 (5, 5, '\"===\"', '\"+++\"'),
 (6, 6, 'function', 'Lecture'),
 (7, 7, 'length', 'width'),
@@ -127,7 +127,7 @@ INSERT INTO `tbl_questions` (`fld_questionId`, `fld_question`, `fld_answer`, `fl
 (2, 'Which loop is used for iterating over the properties of an object?', 'forin', 1),
 (3, 'What does the acronym DOM stand for?', 'Document Object Mode', 1),
 (4, 'In JavaScript, what function is used to convert a string to an integer?', 'parseInt', 1),
-(5, 'Which operator is used for strict equality comparison in JavaScript?', '===', 1),
+(5, 'Which operator is used for strict equality comparison in JavaScript?', '\"===\"', 1),
 (6, 'What keyword is used to define a function in JavaScript?', 'function', 1),
 (7, 'How can you check the length of an array in JavaScript?', 'length', 1),
 (8, 'What method is used to add an element to the end of an array?', 'push', 1),
@@ -280,7 +280,7 @@ ALTER TABLE `tbl_quiz`
 -- AUTO_INCREMENT for table `tbl_score`
 --
 ALTER TABLE `tbl_score`
-  MODIFY `fld_scoreId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `fld_scoreId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
